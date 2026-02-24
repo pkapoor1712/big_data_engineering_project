@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "test-data-project"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"afterifdata_accountKey": {
+			"value": ""
+		},
+		"aftersinkdata_accountKey": {
+			"value": ""
+		},
+		"datatobronze_accountKey": {
+			"value": ""
+		},
+		"datatobronze1_accountKey": {
+			"value": ""
+		},
+		"linkedservice_accountKey": {
+			"value": ""
+		},
+		"sinklinkedservice_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"afterifdata_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"aftersinkdata_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"datafromgithub_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/mayank953/BigDataProjects/refs/heads/main/Project-Brazillian%20Ecommerce/Data/"
+		},
+		"datafromhttp_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/mayank953/"
+		},
+		"datatobronze_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"datatobronze1_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"json_parameter_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/pkapoor1712/data/refs/heads/main/json.json"
+		},
+		"jsonfromhttp_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/mayank953/BigDataProjects/refs/heads/main/Project-Brazillian%20Ecommerce/ForEachInput.json"
+		},
+		"linkedservice_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"pkdata_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/pkapoor1712/"
+		},
+		"sinklinkedservice_properties_typeProperties_url": {
+			"value": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

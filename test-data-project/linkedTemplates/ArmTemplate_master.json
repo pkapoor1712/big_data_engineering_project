@@ -1,0 +1,195 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "test-data-project"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"afterifdata_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'afterifdata'"
+		},
+		"aftersinkdata_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'aftersinkdata'"
+		},
+		"datatobronze_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'datatobronze'"
+		},
+		"datatobronze1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'datatobronze1'"
+		},
+		"linkedservice_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'linkedservice'"
+		},
+		"sinklinkedservice_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'sinklinkedservice'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"afterifdata_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"aftersinkdata_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"datafromgithub_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/mayank953/BigDataProjects/refs/heads/main/Project-Brazillian%20Ecommerce/Data/"
+		},
+		"datafromhttp_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/mayank953/"
+		},
+		"datatobronze_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"datatobronze1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"json_parameter_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/pkapoor1712/data/refs/heads/main/json.json"
+		},
+		"jsonfromhttp_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/mayank953/BigDataProjects/refs/heads/main/Project-Brazillian%20Ecommerce/ForEachInput.json"
+		},
+		"linkedservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"pkdata_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/pkapoor1712/"
+		},
+		"sinklinkedservice_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pkdatastorage17.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "test-data-project_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"afterifdata_accountKey": {
+						"value": "[parameters('afterifdata_accountKey')]"
+					},
+					"aftersinkdata_accountKey": {
+						"value": "[parameters('aftersinkdata_accountKey')]"
+					},
+					"datatobronze_accountKey": {
+						"value": "[parameters('datatobronze_accountKey')]"
+					},
+					"datatobronze1_accountKey": {
+						"value": "[parameters('datatobronze1_accountKey')]"
+					},
+					"linkedservice_accountKey": {
+						"value": "[parameters('linkedservice_accountKey')]"
+					},
+					"sinklinkedservice_accountKey": {
+						"value": "[parameters('sinklinkedservice_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"afterifdata_properties_typeProperties_url": {
+						"value": "[parameters('afterifdata_properties_typeProperties_url')]"
+					},
+					"aftersinkdata_properties_typeProperties_url": {
+						"value": "[parameters('aftersinkdata_properties_typeProperties_url')]"
+					},
+					"datafromgithub_properties_typeProperties_url": {
+						"value": "[parameters('datafromgithub_properties_typeProperties_url')]"
+					},
+					"datafromhttp_properties_typeProperties_url": {
+						"value": "[parameters('datafromhttp_properties_typeProperties_url')]"
+					},
+					"datatobronze_properties_typeProperties_url": {
+						"value": "[parameters('datatobronze_properties_typeProperties_url')]"
+					},
+					"datatobronze1_properties_typeProperties_url": {
+						"value": "[parameters('datatobronze1_properties_typeProperties_url')]"
+					},
+					"json_parameter_properties_typeProperties_url": {
+						"value": "[parameters('json_parameter_properties_typeProperties_url')]"
+					},
+					"jsonfromhttp_properties_typeProperties_url": {
+						"value": "[parameters('jsonfromhttp_properties_typeProperties_url')]"
+					},
+					"linkedservice_properties_typeProperties_url": {
+						"value": "[parameters('linkedservice_properties_typeProperties_url')]"
+					},
+					"pkdata_properties_typeProperties_url": {
+						"value": "[parameters('pkdata_properties_typeProperties_url')]"
+					},
+					"sinklinkedservice_properties_typeProperties_url": {
+						"value": "[parameters('sinklinkedservice_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "test-data-project_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'test-data-project_ArmTemplate_0')]"
+			]
+		}
+	]
+}
