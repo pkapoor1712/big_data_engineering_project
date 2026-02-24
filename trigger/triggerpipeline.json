@@ -1,0 +1,25 @@
+{
+	"name": "triggerpipeline",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "dynamic pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 15,
+				"startTime": "2026-02-18T12:00:00",
+				"endTime": "2026-02-18T12:15:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

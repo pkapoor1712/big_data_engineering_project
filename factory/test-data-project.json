@@ -1,0 +1,9 @@
+{
+	"name": "test-data-project",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b91e2acc-fcb6-43e3-80c2-09142b1abc1d",
+		"tenantId": "3211f43b-ee38-4d64-95d0-a29cad376485"
+	}
+}

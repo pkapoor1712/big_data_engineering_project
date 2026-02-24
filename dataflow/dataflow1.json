@@ -1,0 +1,64 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "finaldata",
+						"type": "DatasetReference"
+					},
+					"name": "source"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "finalresultindia",
+						"type": "DatasetReference"
+					},
+					"name": "sinkresult"
+				}
+			],
+			"transformations": [
+				{
+					"name": "selectcolumn"
+				},
+				{
+					"name": "india"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          user as short,",
+				"          name as string,",
+				"          salary as short,",
+				"          location as string,",
+				"          date as date 'dd/MM/yyyy',",
+				"          attendance as boolean",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source",
+				"source select(mapColumn(",
+				"          user,",
+				"          name,",
+				"          salary,",
+				"          location",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> selectcolumn",
+				"selectcolumn split(location == 'India',",
+				"     disjoint: false) ~> india@(india, us)",
+				"india@india sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkresult"
+			]
+		}
+	}
+}
